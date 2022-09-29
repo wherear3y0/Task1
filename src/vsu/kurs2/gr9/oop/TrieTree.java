@@ -23,6 +23,7 @@ public class TrieTree {
             int index;
             int leight = key.length();
 
+            root = new TrieNode();
             TrieNode insrt = root;
 
             for (lvl = 0; lvl < leight; lvl++) {
