@@ -5,26 +5,30 @@ public class TrieTree {
     static final int alfavit = 33;
 
     class TrieNode {
+
         TrieNode[] children = new TrieNode[alfavit];
 
         boolean end;
 
         TrieNode() {
-            end = false;
+            TrieNode root = new TrieNode();
             for (int i = 0; i < alfavit; i++) {
                 children[i] = null;
             }
+
         }
+
     }
 
-    TrieNode root;
+    private TrieNode root;
+
 
     void insert(String key) {
         int lvl;
         int index;
         int leight = key.length();
 
-        root = new TrieNode();
+
         TrieNode insrt = root;
 
         for (lvl = 0; lvl < leight; lvl++) {
@@ -42,7 +46,7 @@ public class TrieTree {
         int index;
         int leight = key.length();
 
-        root = new TrieNode();
+        this.root = new TrieNode();
         TrieNode insrt = root;
 
         for (lvl = 0; lvl < leight; lvl++) {
