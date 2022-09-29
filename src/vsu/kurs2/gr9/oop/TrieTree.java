@@ -17,7 +17,7 @@ public class TrieTree {
         }
     }
 
-         TrieNode root;
+     TrieNode root;
      void insert(String key) {
          int lvl;
          int index;
@@ -51,7 +51,7 @@ public class TrieTree {
                 insrt = insrt.children[index];
             }
             return (insrt.end);
-        }
+     }
 
 
     }
