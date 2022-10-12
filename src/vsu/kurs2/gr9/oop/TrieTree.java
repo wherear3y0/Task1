@@ -56,5 +56,37 @@ public class TrieTree {
         return (insrt.end);
     }
 
+    boolean isEmpty(TrieNode root){
+        for(int i = 0; i < alfavit; i++){
+            if(root.children[i] != null) {
+                return false;
+            }
+        }
+        return true;
+    }
 
+    TrieNode remove(TrieNode root, String key, int lvl){
+        if(root == null){
+            return null;
+        }
+
+        if(lvl == key.length()){
+            if(root.end){
+                root.end = false;
+            }
+            if(isEmpty(root)){
+                root = null;
+            }
+            return root;
+        }
+
+        int index = key.charAt(lvl) - 'a';
+        root.children[index] = remove(root.children[index], key, lvl + 1);
+
+        if(isEmpty(root) && root.end == false){
+            root = null;
+        }
+
+        return root;
+    }
 }
